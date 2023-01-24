@@ -23,7 +23,9 @@ module.exports.register = async (req, res) => {
         console.log(err);
     }
 };
+//AUTH process above
 
+//user functionality below
 //LOGIN A USER
 module.exports.login = async (req, res) => {
     try {
