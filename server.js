@@ -11,7 +11,8 @@ app.use( express.urlencoded({ extended: true }) ); // need these 2 lines in orde
 //connect to DB
 require("./server/config/mongoose.config");
 
-require('./server/routes/user.route')(app);
+require('./server/routes/user.routes')(app);
+require('./server/routes/post.routes')(app);
 
 
 app.listen(port, () => console.log(`Listening on port: ${port}`) );
