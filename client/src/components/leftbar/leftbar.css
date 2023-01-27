@@ -1,0 +1,41 @@
+.leftBar{
+    flex: 3.2;
+    height: calc(100vh - 60px);
+}
+.leftBarWrapper{
+    padding: 15px 25px 25px 25px;
+}
+.leftBarList{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.leftBarItem{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+.leftBarItem:hover{
+    color: #1877f2;
+}
+.leftBarSpan{
+    margin-left: 10px;
+    font-weight: bold;
+}
+.leftBarButton{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 50%;
+    justify-content: center;
+    border: none;
+}
+.leftBarButton:hover{
+    color: #1877f2;
+}
+.leftBarHr{
+    margin: 20px 55px 20px 0px ;
+}
