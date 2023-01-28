@@ -1,6 +1,8 @@
 .leftBar{
     flex: 3.2;
     height: calc(100vh - 60px);
+    position: sticky;
+    top: 60px;
 }
 .leftBarWrapper{
     padding: 15px 25px 25px 25px;

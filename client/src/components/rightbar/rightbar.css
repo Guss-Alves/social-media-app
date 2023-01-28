@@ -1,3 +1,87 @@
 .rightBar{
     flex: 3;
 }
+.rightBarWrapper{
+    padding: 15px 25px 25px 25px;
+}
+.rightBarSponsorItem{
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    padding: 5px;
+    cursor: pointer;
+}
+.rightBarSponsorItem:hover{
+    background: rgb(215, 211, 211);
+    border-radius: 10px;
+}
+.rightBarImg{
+    height: 135px;
+    width: 135px;
+    border-radius: 30px;
+}
+.sponsorSpan{
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 15px;
+}
+.weblink{
+    font-weight: 300;
+}
+.rightBarHr{
+    margin: 15px 0px;
+    border: 1px solid rgb(223, 217, 217)
+}
+
+.rightBarCenterItem{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.giftImg{
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+}
+
+.rightBarBottomTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.rightBarSearch{
+    margin-right: 10px;
+}
+.rightBarFriendsItem{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.rightBarFriendsItem:hover{
+    background: rgb(215, 211, 211);;
+}
+.friendsOnline{
+    position: relative;
+}
+.rightBarFriendsImg{
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.friendsGreen{
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    background: limegreen;
+    position: absolute;
+    top: 2px;
+    right: 12px;
+}
+.friendsUserName{
+    font-weight: 500;
+    font-size: 17px;
+}

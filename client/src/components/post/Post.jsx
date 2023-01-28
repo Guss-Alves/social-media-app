@@ -1,8 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './post.css'
 import {SlOptions} from 'react-icons/sl'
 
 const Post = () => {
+    const [like, setLike] = useState(0);
+    const [isLiked, setIsLiked] = useState(false);
+
+    const likeHandler = ()=>{
+        setLike(isLiked ? like-1 : like+1);
+        setIsLiked(!isLiked);
+    }
+
+
     return (
         <div className='post'>
             <div className="postWrapper">
@@ -22,8 +31,8 @@ const Post = () => {
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
-                        <img className='likeIcon' src="assets/like-button.png" alt="likes" />
-                        <span className='likeCounter'>2 likes</span>
+                        <img onClick={likeHandler} className='likeIcon' src="assets/like-button.png" alt="likes" />
+                        <span className='likeCounter'>{like} likes</span>
                     </div>
                     <div className="postBottomRight">
                         <span className="postComments">10 comments</span>
