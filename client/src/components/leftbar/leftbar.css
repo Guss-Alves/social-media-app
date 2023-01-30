@@ -1,8 +1,19 @@
 .leftBar{
     flex: 3.2;
     height: calc(100vh - 60px);
+    overflow-y: scroll;
     position: sticky;
     top: 60px;
+    margin-right: 10px;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: aliceblue ;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(151, 155, 159);
 }
 .leftBarWrapper{
     padding: 15px 25px 25px 25px;
@@ -40,4 +51,24 @@
 }
 .leftBarHr{
     margin: 20px 55px 20px 0px ;
+}
+
+.leftBarTitle{
+    padding: 5px;
+}
+.leftBarFriendsItem{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.leftBarFriendsItem:hover{
+    background: rgb(215, 211, 211);;
+}
+.leftBarFriendsImg{
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-right: 10px;
 }

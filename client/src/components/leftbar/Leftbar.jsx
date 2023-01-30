@@ -53,6 +53,37 @@ const Leftbar = () => {
                     <span className='leftBarSpan'>See more</span>
                 </button>
                 <hr className='leftBarHr' />
+                <h3 className='leftBarTitle'>Suggested Friends</h3>
+                <div className="leftBarFriendsItem">
+                            <div className="friendsOnline">
+                                <img className='leftBarFriendsImg' src="assets/profile/profile2.jpg" alt="" />
+                            </div>
+                            <span className="friendsUserName">Jade Picon</span>
+                        </div>
+                        <div className="leftBarFriendsItem">
+                            <div className="friendsOnline">
+                                <img className='leftBarFriendsImg' src="assets/profile/profile3.jpg" alt="" />
+                            </div>
+                            <span className="friendsUserName">Alex Gomes</span>
+                        </div>
+                        <div className="leftBarFriendsItem">
+                            <div className="friendsOnline">
+                                <img className='leftBarFriendsImg' src="assets/profile/profile4.jpg" alt="" />
+                            </div>
+                            <span className="friendsUserName">John Carter</span>
+                        </div>
+                        <div className="leftBarFriendsItem">
+                            <div className="friendsOnline">
+                                <img className='leftBarFriendsImg' src="assets/profile/profile5.jpg" alt="" />
+                            </div>
+                            <span className="friendsUserName">Logan Paul</span>
+                        </div>
+                        <div className="leftBarFriendsItem">
+                            <div className="friendsOnline">
+                                <img className='leftBarFriendsImg' src="assets/profile/profile1.jpg" alt="" />
+                            </div>
+                            <span className="friendsUserName">Joao Carlos</span>
+                        </div>
             </div>
         </div>
     );

@@ -10,12 +10,12 @@ const Rightbar = () => {
                 <div className="rightBarTop">
                         <h3>Sponsored</h3>
                     <div className="rightBarSponsorItem">
-                        <img className='rightBarImg' src="assets/sponsor/sponsor1.png" alt="sponsor1" />
+                        <img className='rightBarImg' src="assets/sponsor1.jpg" alt="sponsor1" />
                         <span className='sponsorSpan'>Delivery & takeout from the best local restaurants <br /><span className="weblink">doordash.com</span></span>
                         
                     </div>
                     <div className="rightBarSponsorItem">
-                        <img className='rightBarImg' src="assets/sponsor/sponsor2.png" alt="sponsor2" />
+                        <img className='rightBarImg' src="assets/sponsor2.jpg" alt="sponsor2" />
                         <span className='sponsorSpan'>Great Deals for Flights, Hotels & More <br /><span className="weblink">expedia.com</span></span>
                     </div>
                 </div>
