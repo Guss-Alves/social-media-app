@@ -1,0 +1,35 @@
+.rightBar{
+    flex: 3;
+}
+.rightBarWrapper{
+    padding: 15px 25px 25px 25px;
+}
+.rightBarTopIntroItem{
+    margin: 10px 0;
+}
+.itemOne, .itemTwo{
+    font-size: 17px;
+}
+.itemTwo{
+    font-weight: 500;
+}
+
+.profileRightBarBottom{
+    margin-top: 40px;
+}
+.listFriends{
+    display: flex;
+    flex-wrap: wrap;
+}
+.RightBarBottomItem{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 15px 15px 0;
+    align-items: center;
+    cursor: pointer;
+}
+.listFriendsImg{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
