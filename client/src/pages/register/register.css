@@ -32,7 +32,7 @@
 }
 
 .loginBox{
-    height: 300px;
+    height: 400px;
     padding: 20px;
     background-color: white;
     display: flex;
@@ -75,4 +75,4 @@
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-}
+} 
