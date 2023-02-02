@@ -4,12 +4,15 @@ import {BiSearchAlt} from 'react-icons/bi'
 import {CgMenuGridO} from 'react-icons/cg'
 import {MdOutlineMessage} from 'react-icons/md'
 import {MdNotificationsActive} from 'react-icons/md'
+import {Link} from 'react-router-dom'
 
 const Topbar = () => {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER
+
     return (
         <div className='topbarContainer'>
             <div className="topbarLeft">
-                <span className='logo'>Gusbook</span>
+                <Link to='/' style={{textDecoration: "none"}}><span className='logo'>Gusbook</span></Link>
             </div>
             <div className="topbarCenter">
                 <div className="searchBar">
@@ -33,7 +36,9 @@ const Topbar = () => {
                     </div>
                 </div>
                 <div >
-                    <img src="assets/profile/profile4.jpg" alt="userPic" className="homePic"/>
+                    <Link to={"/profile/gustavo"} style={{textDecoration: "none"}}>
+                        <img src={`${PF}profile/profile4.jpg`} alt="userPic" className="homePic"/>
+                    </Link>
                 </div>
             </div>
         </div>

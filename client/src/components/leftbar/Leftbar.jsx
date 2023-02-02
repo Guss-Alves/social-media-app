@@ -11,6 +11,8 @@ import {BsQuestionLg} from 'react-icons/bs'
 import {BsArrowDownCircle} from 'react-icons/bs'
 
 const Leftbar = () => {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER
+
     return (
         <div className='leftBar'>
             <div className="leftBarWrapper">
@@ -56,31 +58,31 @@ const Leftbar = () => {
                 <h3 className='leftBarTitle'>Suggested Friends</h3>
                 <div className="leftBarFriendsItem">
                             <div className="friendsOnline">
-                                <img className='leftBarFriendsImg' src="assets/profile/profile2.jpg" alt="" />
+                                <img className='leftBarFriendsImg' src={`${PF}profile/profile2.jpg`} alt="" />
                             </div>
                             <span className="friendsUserName">Jade Picon</span>
                         </div>
                         <div className="leftBarFriendsItem">
                             <div className="friendsOnline">
-                                <img className='leftBarFriendsImg' src="assets/profile/profile3.jpg" alt="" />
+                                <img className='leftBarFriendsImg' src={`${PF}profile/profile3.jpg`} alt="" />
                             </div>
                             <span className="friendsUserName">Alex Gomes</span>
                         </div>
                         <div className="leftBarFriendsItem">
                             <div className="friendsOnline">
-                                <img className='leftBarFriendsImg' src="assets/profile/profile4.jpg" alt="" />
+                                <img className='leftBarFriendsImg' src={`${PF}profile/profile4.jpg`} alt="" />
                             </div>
                             <span className="friendsUserName">John Carter</span>
                         </div>
                         <div className="leftBarFriendsItem">
                             <div className="friendsOnline">
-                                <img className='leftBarFriendsImg' src="assets/profile/profile5.jpg" alt="" />
+                                <img className='leftBarFriendsImg' src={`${PF}profile/profile5.jpg`} alt="" />
                             </div>
                             <span className="friendsUserName">Logan Paul</span>
                         </div>
                         <div className="leftBarFriendsItem">
                             <div className="friendsOnline">
-                                <img className='leftBarFriendsImg' src="assets/profile/profile1.jpg" alt="" />
+                                <img className='leftBarFriendsImg' src={`${PF}profile/profile1.jpg`} alt="" />
                             </div>
                             <span className="friendsUserName">Joao Carlos</span>
                         </div>

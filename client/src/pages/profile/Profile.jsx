@@ -6,6 +6,8 @@ import Topbar from '../../components/topbar/Topbar';
 import ProfileRightBar from '../../components/profileRightBar/ProfileRightBar';
 
 const Profile = () => {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER
+
     return (
         <div>
             <>
@@ -15,8 +17,8 @@ const Profile = () => {
                     <div className="profileRight">
                         <div className="profileRightTop">
                             <div className="profileCover">
-                                <img className='profileCoverImg' src="assets/cover3.jpg" alt="cover" />
-                                <img className='profileUserImg' src="assets/profile/profile4.jpg" alt="profile" />
+                                <img className='profileCoverImg' src={`${PF}cover3.jpg`} alt="cover" />
+                                <img className='profileUserImg' src={`${PF}profile/profile4.jpg`} alt="profile" />
                             </div>
                             <div className="profileInfo">
                                 <h1 className='profileUsername'>Gustavo Alves</h1>

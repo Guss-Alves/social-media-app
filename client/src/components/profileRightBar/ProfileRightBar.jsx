@@ -2,6 +2,9 @@ import React from 'react';
 import './profileRightBar.css'
 
 const ProfileRightBar = () => {
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER
+
+
     return (
         <div className='rightBar'>
             <div className="rightBarWrapper">
@@ -24,23 +27,23 @@ const ProfileRightBar = () => {
                     <h2>Friends</h2>
                     <div className="listFriends">
                         <div className="RightBarBottomItem">
-                            <img className='listFriendsImg' src="assets/profile/profile2.jpg" alt="friend" />
+                            <img className='listFriendsImg' src={`${PF}profile/profile2.jpg`} alt="friend" />
                             <span className='userFriendName'>Jade Picon</span>
                         </div>
                         <div className="RightBarBottomItem">
-                            <img className='listFriendsImg' src="assets/profile/profile1.jpg" alt="friend" />
+                            <img className='listFriendsImg' src={`${PF}profile/profile1.jpg`} alt="friend" />
                             <span className='userFriendName'>Jade Picon</span>
                         </div>
                         <div className="RightBarBottomItem">
-                            <img className='listFriendsImg' src="assets/profile/profile3.jpg" alt="friend" />
+                            <img className='listFriendsImg' src={`${PF}profile/profile3.jpg`} alt="friend" />
                             <span className='userFriendName'>Jade Picon</span>
                         </div>
                         <div className="RightBarBottomItem">
-                            <img className='listFriendsImg' src="assets/profile/profile4.jpg" alt="friend" />
+                            <img className='listFriendsImg' src={`${PF}profile/profile4.jpg`} alt="friend" />
                             <span className='userFriendName'>Jade Picon</span>
                         </div>
                         <div className="RightBarBottomItem">
-                            <img className='listFriendsImg' src="assets/profile/profile5.jpg" alt="friend" />
+                            <img className='listFriendsImg' src={`${PF}profile/profile5.jpg`} alt="friend" />
                             <span className='userFriendName'>Jade Picon</span>
                         </div>
                         

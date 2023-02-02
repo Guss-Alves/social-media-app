@@ -5,6 +5,7 @@ import {SlOptions} from 'react-icons/sl'
 const Post = () => {
     const [like, setLike] = useState(0);
     const [isLiked, setIsLiked] = useState(false);
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER
 
     const likeHandler = ()=>{
         setLike(isLiked ? like-1 : like+1);
@@ -17,7 +18,7 @@ const Post = () => {
             <div className="postWrapper">
                 <div className="postTop">
                     <div className="postTopLeft">
-                        <img src="assets/profile/profile4.jpg" alt="profile pic" className='sharePic' />
+                        <img src={`${PF}profile/profile4.jpg`} alt="profile pic" className='sharePic' />
                         <span className="postUsername">Gustavo Alves</span>
                         <span className="postDate">5 min ago</span>
                     </div>
@@ -27,11 +28,11 @@ const Post = () => {
                 </div>
                 <div className="postCenter">
                     <span className="postText">My first post</span>
-                    <img className='postCenterImg' src="assets/post/post3.jpg" alt="post" />
+                    <img className='postCenterImg' src={`${PF}post/post3.jpg`} alt="post" />
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
-                        <img onClick={likeHandler} className='likeIcon' src="assets/like-button.png" alt="likes" />
+                        <img onClick={likeHandler} className='likeIcon' src={`${PF}like-button.png`} alt="likes" />
                         <span className='likeCounter'>{like} likes</span>
                     </div>
                     <div className="postBottomRight">
