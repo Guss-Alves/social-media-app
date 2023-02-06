@@ -1,21 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import Post from '../post/Post';
 import Share from '../share/Share';
-import './feed.css'
+import './profileFeed.css'
 import axios from 'axios';
 
-const Feed = () => {
+const ProfileFeed = ({username}) => {
 
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         const fetchPosts = async () =>{
-            const res =  await axios.get('http://localhost:8000/api/timeline/63d0660e5695830c1e0d9c5f')
-            console.log('res aqui do feed',res);
+            const res = await axios.get('http://localhost:8000/api/profile/'+ username)
+            console.log('res aqui doo profileFeed',res);
             setPosts(res.data);
+            // console.log('its alaright?',username);
         };
         fetchPosts();
-    }, []);
+    }, [username]);
 
 
     return (
@@ -34,4 +35,4 @@ const Feed = () => {
     );
 };
 
-export default Feed;
+export default ProfileFeed;

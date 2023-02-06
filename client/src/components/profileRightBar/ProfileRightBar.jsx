@@ -1,7 +1,7 @@
 import React from 'react';
 import './profileRightBar.css'
 
-const ProfileRightBar = () => {
+const ProfileRightBar = ({user}) => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
 
 
@@ -12,15 +12,15 @@ const ProfileRightBar = () => {
                     <h2>Intro</h2>
                     <div className="rightBarTopIntroItem">
                         <span className='itemOne'>City :</span>
-                        <span className='itemTwo'> Novato</span>
+                        <span className='itemTwo'> {user.city}</span>
                     </div>
                     <div className="rightBarTopIntroItem">
                         <span className='itemOne'>From :</span>
-                        <span className='itemTwo'> Goiania, Brazil</span>
+                        <span className='itemTwo'> {user.from}</span>
                     </div>
                     <div className="rightBarTopIntroItem">
                         <span className='itemOne'>Relationship :</span>
-                        <span className='itemTwo'> Single</span>
+                        <span className='itemTwo'> {user.relationship===1? 'Single': user.relationship===2? 'Married' : user.relationship===3? 'Complicated': '-'}</span>
                     </div>
                 </div>
                 <div className="profileRightBarBottom">
