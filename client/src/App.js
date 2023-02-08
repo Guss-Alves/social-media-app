@@ -19,7 +19,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={user ? <Home/> : <Login/>}/>
                 <Route exact path="/login" element={user? redirect("/") : <Login/>}/>
-                <Route exact path="/register" element={<Register/>}/>
+                <Route exact path="/register" element={user? redirect("/") : <Register/>}/>
                 <Route exact path="/profile/:id" element={<Profile/>}/>
             </Routes>
         </div>
