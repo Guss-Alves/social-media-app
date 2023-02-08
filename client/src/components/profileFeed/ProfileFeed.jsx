@@ -4,6 +4,7 @@ import Share from '../share/Share';
 import './profileFeed.css'
 import axios from 'axios';
 
+
 const ProfileFeed = ({username}) => {
 
     const [posts, setPosts] = useState([]);

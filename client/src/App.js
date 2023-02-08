@@ -4,16 +4,21 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register"
 import {
     Routes,
-    Route
+    Route,
+    redirect
 } from 'react-router-dom'
-
+import {useContext} from 'react';
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
+
+    const { user } = useContext(AuthContext);
+
     return (
         <div>
             <Routes>
-                <Route exact path="/" element={<Home/>}/>
-                <Route exact path="/login" element={<Login/>}/>
+                <Route exact path="/" element={user ? <Home/> : <Login/>}/>
+                <Route exact path="/login" element={user? redirect("/") : <Login/>}/>
                 <Route exact path="/register" element={<Register/>}/>
                 <Route exact path="/profile/:id" element={<Profile/>}/>
             </Routes>
