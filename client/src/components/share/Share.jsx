@@ -1,17 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './share.css'
 import {RiLiveLine} from 'react-icons/ri'
 import {TbPhoto} from 'react-icons/tb'
 import {BsFillEmojiLaughingFill} from 'react-icons/bs'
+import { AuthContext } from "../../context/AuthContext";
 
 const Share = () => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
+    const { user } = useContext(AuthContext);
     
     return (
         <div className='share'>
             <div className="shareWrapper">
                 <div className="shareTop">
-                    <img src={`${PF}profile/profile4.jpg`} alt="profile pic" className='sharePic' />
+                    <img src={user.profilePicture? PF+ user.profilePicture :`${PF}profile/profile4.jpg`} alt="profile pic" className='sharePic' />
                     <input placeholder="What's on your mind ..." type="text" className='shareInput' />
                 </div>
                 <hr className='shareHr' />
