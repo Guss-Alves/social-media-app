@@ -14,7 +14,11 @@ const Feed = () => {
         const fetchPosts = async () =>{
             const res = await axios.get(`http://localhost:8000/api/timeline/${user._id}`)
             // console.log('res aqui do feed',res);
-            setPosts(res.data);
+            setPosts(
+                res.data.sort((p1,p2)=>{
+                    return new Date(p2.createdAt) - new Date(p1.createdAt);
+                })
+            );
         };
         fetchPosts();
     }, [user._id]);
