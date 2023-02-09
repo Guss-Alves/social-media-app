@@ -1,7 +1,6 @@
 const User = require("../models/user.model");
 const bcrypt = require("bcrypt")
 
-
 //REGISTER A USER
 module.exports.register = async (req, res) => {
     try {
@@ -89,6 +88,26 @@ module.exports.getUser = async (req, res) => {
         res.status(500).json(err);
     }
 }
+//get user friends
+module.exports.userFriends = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        const friends = await Promise.all(
+            user.followings.map((friendId) => {
+                return User.findById(friendId);
+            })
+        );
+        let friendList = [];
+        friends.map((friend) => {
+            const { _id, username, profilePicture } = friend;
+            friendList.push({ _id, username, profilePicture });
+        });
+        res.status(200).json(friendList)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+};
+
 //follow user
 module.exports.followUser = async (req, res) => {
     if (req.body.userId !== req.params.id) {
@@ -100,7 +119,7 @@ module.exports.followUser = async (req, res) => {
                 await currentUser.updateOne({ $push: { followings: req.params.id } });
                 res.status(200).json("user has been followed");
             } else {
-                res.status(403).json("you already follow this user");
+                res.status(403).json("you allready follow this user");
             }
         } catch (err) {
             res.status(500).json(err);

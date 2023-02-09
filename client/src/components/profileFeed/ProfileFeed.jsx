@@ -1,13 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import Post from '../post/Post';
 import Share from '../share/Share';
 import './profileFeed.css'
 import axios from 'axios';
+import { AuthContext } from "../../context/AuthContext";
+import {useParams} from "react-router"
 
 
 const ProfileFeed = ({username}) => {
 
     const [posts, setPosts] = useState([]);
+    const { user } = useContext(AuthContext);
+    const id = useParams().id;
 
     useEffect(() => {
         const fetchPosts = async () =>{
@@ -26,7 +30,9 @@ const ProfileFeed = ({username}) => {
     return (
         <div className='feed'>
             <div className="feedWrapper">
-                <Share/>
+                {
+                user._id===id && <Share/>
+                }
             </div>
                 {
                     posts.map((p)=>{

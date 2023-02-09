@@ -33,3 +33,24 @@
     width: 100px;
     object-fit: cover;
 }
+.noFriends{
+    color: rgb(198, 61, 61);
+    font-size: 18px;
+    border-bottom: 1px solid grey;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.followButton{
+    margin: 20px 0;
+    border: none;
+    background-color: #1872f2;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+}
