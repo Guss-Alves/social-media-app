@@ -13,7 +13,7 @@ const Feed = () => {
     useEffect(() => {
         const fetchPosts = async () =>{
             const res = await axios.get(`http://localhost:8000/api/timeline/${user._id}`)
-            console.log('res aqui do feed',res);
+            // console.log('res aqui do feed',res);
             setPosts(res.data);
         };
         fetchPosts();
