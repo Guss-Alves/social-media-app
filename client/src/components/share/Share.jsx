@@ -3,6 +3,7 @@ import './share.css'
 import {RiLiveLine} from 'react-icons/ri'
 import {TbPhoto} from 'react-icons/tb'
 import {BsFillEmojiLaughingFill} from 'react-icons/bs'
+import {MdOutlineCancel} from 'react-icons/md'
 import { AuthContext } from "../../context/AuthContext";
 import axios from 'axios';
 
@@ -40,6 +41,12 @@ const Share = () => {
                     <input placeholder={`What's on your mind, ${user.username}?`} type="text" className='shareInput' ref={desc} />
                 </div>
                 <hr className='shareHr' />
+                {file &&(
+                    <div className="shareImgContainer">
+                        <img className='shareImgTemp' src={URL.createObjectURL(file)} alt="" />
+                        <MdOutlineCancel className='cancelImg' onClick={()=>{setFile(null)}}/>
+                    </div>
+                )}
                 <div className="shareBottom">
                     <div className="shareOptions">
                         <RiLiveLine size="32px" color='red'/>
