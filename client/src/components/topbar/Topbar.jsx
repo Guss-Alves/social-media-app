@@ -11,7 +11,7 @@ const Topbar = () => {
     const { user } = useContext(AuthContext);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
 
-    console.log(user.username);
+    // console.log(user.username);
     return (
         <div className='topbarContainer'>
             <div className="topbarLeft">

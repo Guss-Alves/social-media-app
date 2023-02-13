@@ -13,7 +13,7 @@ const ProfileRightBar = ({ user }) => {
     const id = useParams().id;
     const { user: currentUser, dispatch } = useContext(AuthContext);
     const [followed, setFollowed] = useState(
-        currentUser.followings.includes(user?.id)
+        currentUser.followings.includes(user?._id)
     );
 
     useEffect(() => {
@@ -37,14 +37,15 @@ const ProfileRightBar = ({ user }) => {
                 });
                 
                 dispatch({ type: "UNFOLLOW", payload: user._id });
+                setFollowed(!followed);
             } else {
                 await axios.put(`http://localhost:8000/api/user/follow/${user._id}`, {
                     userId: currentUser._id,
                 });
                 
                 dispatch({ type: "FOLLOW", payload: user._id });
+                setFollowed(!followed);
             }
-            setFollowed(!followed);
         } catch (err) {
             console.log(err);
         }
