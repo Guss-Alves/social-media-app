@@ -1,6 +1,8 @@
 const User = require("../models/user.model");
 const bcrypt = require("bcrypt")
 
+
+
 //REGISTER A USER
 module.exports.register = async (req, res) => {
     try {
@@ -39,7 +41,20 @@ module.exports.login = async (req, res) => {
         res.status(500).json(err)
     }
 };
-
+//GET ALL THE USERS
+module.exports.showAllUsers  = async (req, res)=>{
+    try{
+        const users = await User.find()
+        let allUsers = []
+        users.map((user)=>{
+            const { _id, username, profilePicture, ...other } = user._doc;
+            allUsers.push({ _id, username, profilePicture });
+        })
+        res.status(200).json(allUsers);
+    }catch(err){
+        console.log(err);
+    }
+}
 //update user
 module.exports.updateUser = async (req, res) => {
     if (req.body.userId === req.params.id || req.body.isAdmin) {
@@ -88,6 +103,7 @@ module.exports.getUser = async (req, res) => {
         res.status(500).json(err);
     }
 }
+
 //get user friends
 module.exports.userFriends = async (req, res) => {
     try {

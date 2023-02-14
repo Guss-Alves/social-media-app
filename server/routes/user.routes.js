@@ -8,5 +8,6 @@ module.exports = (app)=>{
     app.delete('/api/user/:id', UserController.deleteUser),
     app.put('/api/user/follow/:id', UserController.followUser),
     app.put('/api/user/unfollow/:id', UserController.unfollowUser),
-    app.get('/api/friends/:userId', UserController.userFriends)
+    app.get('/api/friends/:userId', UserController.userFriends),
+    app.get('/api/allUsers', UserController.showAllUsers)
 }
