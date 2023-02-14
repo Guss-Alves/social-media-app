@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 import {useParams} from "react-router"
 
 
-const ProfileFeed = ({username}) => {
+const ProfileFeed = () => {
 
     const [posts, setPosts] = useState([]);
     const { user } = useContext(AuthContext);
@@ -15,7 +15,7 @@ const ProfileFeed = ({username}) => {
 
     useEffect(() => {
         const fetchPosts = async () =>{
-            await axios.get('http://localhost:8000/api/profile/'+ username)
+            await axios.get(`http://localhost:8000/api/profile/${id}`)
             .then(res =>{
                 setPosts(
                     // console.log('res aqui doo profileFeed',res);
@@ -28,7 +28,7 @@ const ProfileFeed = ({username}) => {
             })
         };
         fetchPosts();
-    }, [username]);
+    }, [id]);
 
 
     return (

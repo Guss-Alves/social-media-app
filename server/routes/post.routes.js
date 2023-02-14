@@ -7,5 +7,5 @@ module.exports = (app)=>{
     app.put("/api/likes/:id", PostController.postLikes),
     app.get("/api/post/:id", PostController.getPost),
     app.get("/api/timeline/:userId", PostController.timelinePosts),
-    app.get("/api/profile/:username", PostController.allPostsOfOneUser)
+    app.get("/api/profile/:id", PostController.allPostsOfOneUser)
 }

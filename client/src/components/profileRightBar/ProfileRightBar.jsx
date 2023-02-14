@@ -22,7 +22,7 @@ const ProfileRightBar = ({ user }) => {
                 const res = await axios.get(`http://localhost:8000/api/friends/${id}`)
                 // console.log('im hereeee',res)
                 setFriends(res.data);
-            } catch (err) {
+            } catch(err) {
                 console.log(err);
             }
         }
@@ -46,7 +46,7 @@ const ProfileRightBar = ({ user }) => {
                 dispatch({ type: "FOLLOW", payload: user._id });
                 setFollowed(!followed);
             }
-        } catch (err) {
+        } catch(err) {
             console.log(err);
         }
     };
@@ -83,14 +83,12 @@ const ProfileRightBar = ({ user }) => {
                             friends.length !== 0 ?
                                 friends.map((item) => {
                                     return (
-                                        <>
-                                            <Link to={`/profile/${item._id}`} style={{ textDecoration: "none" }}>
-                                                <div key={item._id} className="RightBarBottomItem">
+                                            <Link key={item._id} to={`/profile/${item._id}`} style={{ textDecoration: "none" }}>
+                                                <div className="RightBarBottomItem">
                                                     <img className='listFriendsImg' src={item.profilePicture ? PF + item.profilePicture : `${PF}profile/noAvatar.png`} alt="friend" />
                                                     <span className='userFriendName'>{item.username}</span>
                                                 </div>
                                             </Link>
-                                        </>
                                     )
                                 }) : <span className='noFriends'>User has no friends yet</span>
                         }

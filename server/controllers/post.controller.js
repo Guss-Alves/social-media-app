@@ -84,7 +84,7 @@ module.exports.timelinePosts = async (req, res) => {
 //GET ALL THE POSTS OF AN USER
 module.exports.allPostsOfOneUser = async (req, res) => {
     try {
-        const user = await User.findOne({ username: req.params.username });
+        const user = await User.findById({ _id: req.params.id });
         const posts = await Post.find({ userId: user._id });
         res.status(200).json(posts);
     } catch (err) {
