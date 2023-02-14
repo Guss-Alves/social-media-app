@@ -4,14 +4,20 @@ import {BiSearchAlt} from 'react-icons/bi'
 import {CgMenuGridO} from 'react-icons/cg'
 import {MdOutlineMessage} from 'react-icons/md'
 import {MdNotificationsActive} from 'react-icons/md'
-import {Link} from 'react-router-dom'
+import {BiLogOut} from 'react-icons/bi'
+import {Link, useNavigate} from 'react-router-dom'
 import {AuthContext} from '../../context/AuthContext'
 
 const Topbar = () => {
     const { user } = useContext(AuthContext);
-    const PF = process.env.REACT_APP_PUBLIC_FOLDER
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const navigate = useNavigate();
 
-    // console.log(user.username);
+    const handleLogOut = ()=>{
+        localStorage.clear();
+        navigate('/');
+        window.location.reload();
+    }
     return (
         <div className='topbarContainer'>
             <div className="topbarLeft">
@@ -43,6 +49,10 @@ const Topbar = () => {
                         <img src={user.profilePicture? PF + user.profilePicture : `${PF}profile/noAvatar.png`} alt="userPic" className="homePic"/>
                     </Link>
                 </div>
+                <button className="logOut" onClick={handleLogOut}>
+                    <span className='logOutSpan'>Log Out</span>
+                    <BiLogOut className='logOutIcon'/>
+                </button>
             </div>
         </div>
     );

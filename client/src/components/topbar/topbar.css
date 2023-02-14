@@ -84,3 +84,19 @@
     object-fit: cover;
     cursor: pointer;
 }
+.logOut{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #1877f2;
+    border: none;
+}
+.logOutSpan{
+    color: white;
+    font-size: 15px;
+} 
+.logOutIcon{
+    color: white;
+    font-size: 22px;
+}
