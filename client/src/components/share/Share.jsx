@@ -52,7 +52,7 @@ const Share = () => {
             <form className="shareWrapper" onSubmit={submitHandler}>
                 <div className="shareTop">
                     <img src={user.profilePicture ? PF + user.profilePicture : `${PF}profile/noAvatar.png`} alt="profile pic" className='sharePic' />
-                    <input placeholder={`What's on your mind, ${user.username}?`} type="text" className='shareInput' ref={desc} />
+                    <textarea placeholder={`What's on your mind, ${user.username}?`} type="text" className='shareInput' ref={desc}></textarea>
                 </div>
                 <hr className='shareHr' />
                 {file && (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './leftbar.css'
 import { MdGroups } from 'react-icons/md'
 import { IoStorefront } from 'react-icons/io5'
@@ -11,10 +11,13 @@ import { BsQuestionLg } from 'react-icons/bs'
 import { BsArrowDownCircle } from 'react-icons/bs'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../../context/AuthContext";
 
 const Leftbar = () => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const [suggest, setSuggest] = useState([]);
+    const { user } = useContext(AuthContext);
+
 
     useEffect(() => {
         const getSuggest = async () => {
@@ -75,12 +78,16 @@ const Leftbar = () => {
                     suggest.map((item) => {
                         return (
                             <Link key={item._id} to={`/profile/${item._id}`} style={{textDecoration: "none"}}>
-                                <div className="leftBarFriendsItem">
-                                    <div className="friendsOnline">
-                                        <img className='leftBarFriendsImg' src={item.profilePicture ? PF + item.profilePicture : `${PF}profile/noAvatar.png`} alt="" />
+                                {
+                                user._id!==item._id?
+                                    <div className="leftBarFriendsItem">
+                                        <div className="friendsOnline">
+                                            <img className='leftBarFriendsImg' src={item.profilePicture ? PF + item.profilePicture : `${PF}profile/noAvatar.png`} alt="" />
+                                        </div>
+                                        <span className="friendsUserName">{item.username}</span>
                                     </div>
-                                    <span className="friendsUserName">{item.username}</span>
-                                </div>
+                                    :null
+                                }
                             </Link>
                         )
                     })
