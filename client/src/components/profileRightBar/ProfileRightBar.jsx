@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
 import { MdAdd } from 'react-icons/md'
 import { BiMinus } from 'react-icons/bi'
+import ProfileEdit from '../profileEdit/ProfileEdit';
 
 const ProfileRightBar = ({ user }) => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
@@ -62,7 +63,14 @@ const ProfileRightBar = ({ user }) => {
                             {followed ? <BiMinus size={"22px"} /> : <MdAdd size={"22px"} />}
                         </button>
                     )}
-                    <h2>Intro</h2>
+                    <div className="introContainer">
+                        <h2>Intro</h2>
+                        {
+                            currentUser._id === id && (
+                                <ProfileEdit/>
+                            )
+                        }
+                    </div>
                     <div className="rightBarTopIntroItem">
                         <span className='itemOne'>City :</span>
                         <span className='itemTwo'> {user.city}</span>

@@ -54,3 +54,8 @@
     cursor: pointer;
     border-radius: 5px;
 }
+.introContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
