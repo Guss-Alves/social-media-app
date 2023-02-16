@@ -81,7 +81,7 @@ const ProfileRightBar = ({ user }) => {
                     </div>
                     <div className="rightBarTopIntroItem">
                         <span className='itemOne'>Relationship :</span>
-                        <span className='itemTwo'> {user.relationship === 1 ? 'Single' : user.relationship === 2 ? 'Married' : user.relationship === 3 ? 'Complicated' : '-'}</span>
+                        <span className='itemTwo'> {user.relationship? user.relationship : '-'}</span>
                     </div>
                 </div>
                 <div className="profileRightBarBottom">

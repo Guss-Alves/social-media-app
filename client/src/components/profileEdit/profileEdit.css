@@ -28,14 +28,14 @@ body.active-modal {
 }
 .modal-content {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
     background: #f1f1f1;
     padding: 14px 28px;
-    border-radius: 3px;
-    max-width: 600px;
+    border-radius: 5px;
+    width: 500px;
     min-width: 300px;
     z-index: 999;
 }
@@ -47,6 +47,43 @@ body.active-modal {
     padding: 5px;
     color: red;
     font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+.form-group{
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.editLabel{
+    color:#1877f2;
+    font-size: 20px;
+}
+.editInput{
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.editTextArea{
+    border-radius: 10px;
+    border: 1px solid grey;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.save{
+    display: flex;
+    justify-content: space-between;
+}
+.shareOptionButton{
+    background: rgb(52, 183, 52);
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 7px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
 }
