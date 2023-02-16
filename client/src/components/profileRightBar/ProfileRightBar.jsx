@@ -93,7 +93,7 @@ const ProfileRightBar = ({ user }) => {
                                     return (
                                             <Link key={item._id} to={`/profile/${item._id}`} style={{ textDecoration: "none" }}>
                                                 <div className="RightBarBottomItem">
-                                                    <img className='listFriendsImg' src={item.profilePicture ? PF + item.profilePicture : `${PF}profile/noAvatar.png`} alt="friend" />
+                                                    <img className='listFriendsImg' src={item.profilePicture ? item.profilePicture : `${PF}profile/noAvatar.png`} alt="friend" />
                                                     <span className='userFriendName'>{item.username}</span>
                                                 </div>
                                             </Link>

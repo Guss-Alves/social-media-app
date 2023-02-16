@@ -82,7 +82,7 @@ const Leftbar = () => {
                                 user._id!==item._id?
                                     <div className="leftBarFriendsItem">
                                         <div className="friendsOnline">
-                                            <img className='leftBarFriendsImg' src={item.profilePicture ? PF + item.profilePicture : `${PF}profile/noAvatar.png`} alt="" />
+                                            <img className='leftBarFriendsImg' src={item.profilePicture ? item.profilePicture : `${PF}profile/noAvatar.png`} alt="" />
                                         </div>
                                         <span className="friendsUserName">{item.username}</span>
                                     </div>

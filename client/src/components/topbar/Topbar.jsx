@@ -46,7 +46,7 @@ const Topbar = () => {
                 </div>
                 <div >
                     <Link to={`/profile/${user._id}`} style={{textDecoration: "none"}}>
-                        <img src={user.profilePicture? PF + user.profilePicture : `${PF}profile/noAvatar.png`} alt="userPic" className="homePic"/>
+                        <img src={user.profilePicture? user.profilePicture : `${PF}profile/noAvatar.png`} alt="userPic" className="homePic"/>
                     </Link>
                 </div>
                 <button className="logOut" onClick={handleLogOut}>

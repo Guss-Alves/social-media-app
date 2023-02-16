@@ -63,7 +63,7 @@ const Rightbar = () => {
                                 <div key={item._id} className="rightBarFriends">
                                     <div className="rightBarFriendsItem">
                                         <div className="friendsOnline">
-                                            <img className='rightBarFriendsImg' src={item.profilePicture ? PF + item.profilePicture : `${PF}profile/noAvatar.png`} alt="" />
+                                            <img className='rightBarFriendsImg' src={item.profilePicture ? item.profilePicture : `${PF}profile/noAvatar.png`} alt="" />
                                             <span className="friendsGreen"></span>
                                         </div>
                                         <span className="friendsUserName">{item.username}</span>

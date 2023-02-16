@@ -42,7 +42,7 @@ const Post = ({ post }) => {
                 <div className="postTop">
                     <div className="postTopLeft">
                         <Link to={`profile/${user._id}`} style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-                            <img src={user.profilePicture ? PF + user.profilePicture : PF + "profile/noAvatar.png"} alt="" className='sharePic' />
+                            <img src={user.profilePicture ? user.profilePicture : PF + "profile/noAvatar.png"} alt="" className='sharePic' />
                             <span className="postUsername">{user.username} </span>
                         </Link>
                         <span className="postDate">{moment.utc(post.createdAt).fromNow()}</span>
