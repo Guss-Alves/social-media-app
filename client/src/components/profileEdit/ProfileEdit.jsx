@@ -6,7 +6,7 @@ import axios from 'axios';
 import { AuthContext } from "../../context/AuthContext";
 import { useParams } from 'react-router-dom';
 
-const ProfileEdit = () => {
+const ProfileEdit = ({userInfo}) => {
 
     const [modal, setModal] = useState(false);
     const [file, setFile] = useState(null);
@@ -18,7 +18,7 @@ const ProfileEdit = () => {
     const { user } = useContext(AuthContext);
     const { id } = useParams();
 
-    console.log(user);
+    // console.log(userInfo);
     const handleModal = () => {
         setModal(!modal);
     }
@@ -44,6 +44,7 @@ const ProfileEdit = () => {
                     }
                     await axios.put(`http://localhost:8000/api/user/${id}`, newInfoWithPic);
                     window.location.reload();
+                    // window.dispatchEvent(new Event('storage') === true;
                 }catch(err){
                     console.log(err);
                 }
@@ -54,7 +55,8 @@ const ProfileEdit = () => {
                         desc: desc.current.value,
                         city: city.current.value,
                         from: from.current.value,
-                        relationship: relationship.current.value
+                        relationship: relationship.current.value,
+                        profilePicture: userInfo.profilePicture
                     }
                     await axios.put(`http://localhost:8000/api/user/${id}`, newInfo);
                     window.location.reload();
@@ -85,27 +87,27 @@ const ProfileEdit = () => {
                             <button onClick={handleModal} className='close-modal'><MdOutlineCancel/></button>
                             <div className="form-group">
                                 <label className='editLabel'>Profile picture:</label>
-                                <input type="file" id='file' onChange={(e) =>setFile(e.target.files[0])} />
+                                <input type="file" id='file' onChange={(e) =>setFile(e.target.files[0])} value={''} />
                             </div>
                             <div className="form-group">
                                 <label className='editLabel'>Username:</label>
-                                <input className='editInput' type="text" name='username' ref={userName} defaultValue={user.username} />
+                                <input className='editInput' type="text" name='username' ref={userName} defaultValue={userInfo.username} />
                             </div>
                             <div className="form-group">
                                 <label className='editLabel'>Desc:</label>
-                                <textarea className='editTextArea' rows="3" name='desc' ref={desc} defaultValue={user.desc} ></textarea>
+                                <textarea className='editTextArea' rows="3" name='desc' ref={desc} defaultValue={userInfo.desc} ></textarea>
                             </div>
                             <div className="form-group">
                                 <label className='editLabel'>City:</label>
-                                <input className='editInput' type="text" name='city' ref={city} defaultValue={user.city} />
+                                <input className='editInput' type="text" name='city' ref={city} defaultValue={userInfo.city} />
                             </div>
                             <div className="form-group">
                                 <label className='editLabel'>From:</label>
-                                <input className='editInput' type="text" name='from' ref={from} defaultValue={user.from}  />
+                                <input className='editInput' type="text" name='from' ref={from} defaultValue={userInfo.from}  />
                             </div>
                             <div className="form-group">
                                 <label className='editLabel'>Relationship:</label>
-                                <input className='editInput' type="text" name='relationship' ref={relationship} defaultValue={user.relationship} />
+                                <input className='editInput' type="text" name='relationship' ref={relationship} defaultValue={userInfo.relationship} />
                             </div>
                             <div className="save">
                                 <div></div>

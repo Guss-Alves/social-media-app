@@ -67,7 +67,7 @@ const ProfileRightBar = ({ user }) => {
                         <h2>Intro</h2>
                         {
                             currentUser._id === id && (
-                                <ProfileEdit/>
+                                <ProfileEdit userInfo={user}/>
                             )
                         }
                     </div>
