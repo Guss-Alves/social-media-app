@@ -87,3 +87,8 @@ body.active-modal {
     border: none;
     cursor: pointer;
 }
+.editIcon{
+    font-size: 40px;
+    cursor: pointer;
+    color: green;
+}

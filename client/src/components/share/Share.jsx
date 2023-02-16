@@ -7,7 +7,7 @@ import { MdOutlineCancel } from 'react-icons/md'
 import { AuthContext } from "../../context/AuthContext";
 import axios from 'axios';
 
-const Share = () => {
+const Share = ({userInfo}) => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const { user } = useContext(AuthContext);
     const desc = useRef();
@@ -51,8 +51,8 @@ const Share = () => {
         <div className='share'>
             <form className="shareWrapper" onSubmit={submitHandler}>
                 <div className="shareTop">
-                    <img src={user.profilePicture? user.profilePicture : `${PF}profile/noAvatar.png`} alt="profile pic" className='sharePic' />
-                    <textarea placeholder={`What's on your mind, ${user.username}?`} type="text" className='shareInput' ref={desc}></textarea>
+                    <img src={userInfo.profilePicture? userInfo.profilePicture : `${PF}profile/noAvatar.png`} alt="profile pic" className='sharePic' />
+                    <textarea placeholder={`What's on your mind, ${userInfo.username}?`} type="text" className='shareInput' ref={desc}></textarea>
                 </div>
                 <hr className='shareHr' />
                 {file && (

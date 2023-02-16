@@ -8,7 +8,7 @@ import {BiLogOut} from 'react-icons/bi'
 import {Link, useNavigate} from 'react-router-dom'
 import {AuthContext} from '../../context/AuthContext'
 
-const Topbar = () => {
+const Topbar = ({userInfo}) => {
     const { user } = useContext(AuthContext);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const navigate = useNavigate();
@@ -46,7 +46,7 @@ const Topbar = () => {
                 </div>
                 <div >
                     <Link to={`/profile/${user._id}`} style={{textDecoration: "none"}}>
-                        <img src={user.profilePicture? user.profilePicture : `${PF}profile/noAvatar.png`} alt="userPic" className="homePic"/>
+                        <img src={userInfo.profilePicture? userInfo.profilePicture : `${PF}profile/noAvatar.png`} alt="userPic" className="homePic"/>
                     </Link>
                 </div>
                 <button className="logOut" onClick={handleLogOut}>

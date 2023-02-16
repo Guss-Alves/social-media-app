@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import './profile.css'
 // import Feed from '../../components/feed/Feed';
 import Leftbar from '../../components/leftbar/Leftbar';
@@ -7,17 +7,26 @@ import ProfileRightBar from '../../components/profileRightBar/ProfileRightBar';
 import axios from 'axios';
 import {useParams} from "react-router"
 import ProfileFeed from '../../components/profileFeed/ProfileFeed';
+import { AuthContext } from "../../context/AuthContext";
 
 const Profile = () => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const [user, setUser] = useState({});
+    const [currentUser, setcurrentUser] = useState({});
     const id = useParams().id;
+    const { user:storageUser } = useContext(AuthContext);
 
+    useEffect(() => {
+        const fetchUser = async () =>{
+            const res = await axios.get(`http://localhost:8000/api/user/${storageUser._id}`)
+            setcurrentUser(res.data);
+        };
+        fetchUser();
+    }, [storageUser._id]);
 
     useEffect(() => {
         const fetchUser = async () =>{
             const res = await axios.get(`http://localhost:8000/api/user/${id}`)
-            // console.log('res aqui vei',res);
             setUser(res.data);
         };
         fetchUser();
@@ -26,7 +35,7 @@ const Profile = () => {
     return (
         <div>
             <>
-                <Topbar/>
+                <Topbar userInfo={currentUser}/>
                 <div className="profile">
                     <Leftbar />
                     <div className="profileRight">
@@ -41,7 +50,7 @@ const Profile = () => {
                             </div>
                         </div>
                         <div className="profileRightBottom">
-                            <ProfileFeed/>
+                            <ProfileFeed  userInfo={user}/>
                             <ProfileRightBar user={user}/>
                         </div>
                     </div>

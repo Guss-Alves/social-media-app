@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 import {useParams} from "react-router"
 
 
-const ProfileFeed = () => {
+const ProfileFeed = ({userInfo}) => {
 
     const [posts, setPosts] = useState([]);
     const { user } = useContext(AuthContext);
@@ -35,7 +35,7 @@ const ProfileFeed = () => {
         <div className='feed'>
             <div className="feedWrapper">
                 {
-                user._id===id && <Share/>
+                user._id===id && <Share userInfo={userInfo}/>
                 }
             </div>
                 {

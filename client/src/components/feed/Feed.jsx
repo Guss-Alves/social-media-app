@@ -5,7 +5,7 @@ import './feed.css'
 import axios from 'axios';
 import { AuthContext } from "../../context/AuthContext";
 
-const Feed = () => {
+const Feed = ({userInfo}) => {
 
     const [posts, setPosts] = useState([]);
     const { user } = useContext(AuthContext);
@@ -32,7 +32,7 @@ const Feed = () => {
     return (
         <div className='feed'>
             <div className="feedWrapper">
-                <Share/>
+                <Share userInfo={userInfo}/>
             </div>
                 {
                     posts.map((p)=>{

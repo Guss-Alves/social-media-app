@@ -5,6 +5,7 @@ import { MdOutlineCancel } from 'react-icons/md'
 import axios from 'axios';
 import { AuthContext } from "../../context/AuthContext";
 import { useParams } from 'react-router-dom';
+import { TbPhoto } from 'react-icons/tb'
 
 const ProfileEdit = ({userInfo}) => {
 
@@ -18,7 +19,6 @@ const ProfileEdit = ({userInfo}) => {
     const { user } = useContext(AuthContext);
     const { id } = useParams();
 
-    // console.log(userInfo);
     const handleModal = () => {
         setModal(!modal);
     }
@@ -44,7 +44,6 @@ const ProfileEdit = ({userInfo}) => {
                     }
                     await axios.put(`http://localhost:8000/api/user/${id}`, newInfoWithPic);
                     window.location.reload();
-                    // window.dispatchEvent(new Event('storage') === true;
                 }catch(err){
                     console.log(err);
                 }
@@ -87,7 +86,8 @@ const ProfileEdit = ({userInfo}) => {
                             <button onClick={handleModal} className='close-modal'><MdOutlineCancel/></button>
                             <div className="form-group">
                                 <label className='editLabel'>Profile picture:</label>
-                                <input type="file" id='file' onChange={(e) =>setFile(e.target.files[0])} value={''} />
+                                <label htmlFor="fileEdit"><TbPhoto className='editIcon'/></label>
+                                <input style={{ display: 'none' }} type="file" id='fileEdit' onChange={(e) =>setFile(e.target.files[0])} value={''} />
                             </div>
                             <div className="form-group">
                                 <label className='editLabel'>Username:</label>
