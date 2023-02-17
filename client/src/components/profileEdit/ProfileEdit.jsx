@@ -71,7 +71,6 @@ const ProfileEdit = ({userInfo}) => {
         document.body.classList.remove('active-modal')
     }
     const statusOptions = [
-        "choose one below",
         "Single",
         "Married",
         "Complicated"
