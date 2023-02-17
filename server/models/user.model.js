@@ -54,13 +54,13 @@ const UserSchema = new mongoose.Schema(
         },
         relationship: {
             type: String,
-            // enum:{
-            //     values:[
-            //         "Single",
-            //         "Married",
-            //         "complicated"
-            //     ],
-            // },
+            enum:{
+                values:[
+                    "Single",
+                    "Married",
+                    "complicated"
+                ],
+            },
         },
     }, { timestamps: true });
 

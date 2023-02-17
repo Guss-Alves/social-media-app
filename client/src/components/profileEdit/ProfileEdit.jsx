@@ -70,6 +70,12 @@ const ProfileEdit = ({userInfo}) => {
     } else {
         document.body.classList.remove('active-modal')
     }
+    const statusOptions = [
+        "choose one below",
+        "Single",
+        "Married",
+        "Complicated"
+    ]
 
     return (
         <div>
@@ -94,7 +100,7 @@ const ProfileEdit = ({userInfo}) => {
                                 <input className='editInput' type="text" name='username' ref={userName} defaultValue={userInfo.username} />
                             </div>
                             <div className="form-group">
-                                <label className='editLabel'>Desc:</label>
+                                <label className='editLabel'>Description:</label>
                                 <textarea className='editTextArea' rows="3" name='desc' ref={desc} defaultValue={userInfo.desc} ></textarea>
                             </div>
                             <div className="form-group">
@@ -107,7 +113,14 @@ const ProfileEdit = ({userInfo}) => {
                             </div>
                             <div className="form-group">
                                 <label className='editLabel'>Relationship:</label>
-                                <input className='editInput' type="text" name='relationship' ref={relationship} defaultValue={userInfo.relationship} />
+                                {/* <input className='editInput' type="text" name='relationship' ref={relationship} defaultValue={userInfo.relationship} /> */}
+                                <select name="relationship" className='editInput' ref={relationship} defaultValue={userInfo.relationship} >
+                    {
+                        statusOptions.map((cat, i) => {
+                            return <option key={i} value={cat}>{cat}</option>
+                        })
+                    }
+                </select>
                             </div>
                             <div className="save">
                                 <div></div>
