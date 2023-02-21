@@ -58,7 +58,7 @@ const UserSchema = new mongoose.Schema(
                 values:[
                     "Single",
                     "Married",
-                    "complicated"
+                    "Complicated"
                 ],
             },
         },

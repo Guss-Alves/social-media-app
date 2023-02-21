@@ -29,8 +29,8 @@
     cursor: pointer;
 }
 .listFriendsImg{
-    height: 100px;
-    width: 100px;
+    height: 95px;
+    width: 95px;
     object-fit: cover;
 }
 .noFriends{

@@ -5,6 +5,7 @@ import axios from 'axios';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
+import PostDelete from '../postDelete/PostDelete';
 
 const Post = ({ post }) => {
     const [like, setLike] = useState(post.likes.length);
@@ -48,7 +49,11 @@ const Post = ({ post }) => {
                         <span className="postDate">{moment.utc(post.createdAt).fromNow()}</span>
                     </div>
                     <div className="postTopRight">
-                        <SlOptions className='postTopRightIcon' />
+                        {
+                        post.userId===currentUser._id?
+                        <PostDelete post={post}/>
+                        : <SlOptions className='postTopRightIcon' />
+                        }
                     </div>
                 </div>
                 <div className="postCenter">

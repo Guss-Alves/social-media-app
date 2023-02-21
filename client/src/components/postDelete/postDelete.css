@@ -1,0 +1,81 @@
+body.active-modal {
+    overflow-y: hidden;
+}
+.btnDelete{
+    padding: 5px;
+    color: red;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+}
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 999;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 5px;
+    width: 500px;
+    min-width: 300px;
+    z-index: 999;
+}
+
+.close-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    color: rgb(150, 150, 57);
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+.deletePostBtn{
+    padding: 8px;
+    margin: 10px 0px 5px 0px;
+    color:rgb(234, 228, 228);
+    font-weight: 400;
+    background: rgb(232, 9, 9);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.form-group{
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.editLabel{
+    color:#1877f2;
+    font-size: 20px;
+}
+.editInput{
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.editTextArea{
+    border-radius: 10px;
+    border: 1px solid grey;
+    font-size: 18px;
+    padding-left: 10px;
+}
