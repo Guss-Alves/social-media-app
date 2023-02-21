@@ -27,6 +27,13 @@ module.exports.updatePost = async (req, res) => {
     }
 };
 //delete post
+module.exports.deletePost = (req, res)=>{
+    Post.findByIdAndDelete({_id:req.params.id})
+        .then(deletedExpense =>{
+            res.json({results: deletedExpense})
+        })
+        .catch(error =>{res.json(error)})
+}
 // module.exports.deletePost = async (req, res) => {
 //     try {
 //         const post = await Post.findById({_id:req.params.id});
@@ -40,13 +47,6 @@ module.exports.updatePost = async (req, res) => {
 //         res.status(500).json(err);
 //     }
 // };
-module.exports.deletePost = (req, res)=>{
-    Post.findByIdAndDelete({_id:req.params.id})
-        .then(deletedExpense =>{
-            res.json({results: deletedExpense})
-        })
-        .catch(error =>{res.json(error)})
-}
 
 //like/dislike post (that is a PUT method)
 module.exports.postLikes = async (req, res) => {

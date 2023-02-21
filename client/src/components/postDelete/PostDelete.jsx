@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import "./postDelete.css"
 import { MdOutlineCancel } from 'react-icons/md'
-// import { AuthContext } from "../../context/AuthContext";
 import axios from 'axios';
 
 const PostDelete = ({post}) => {
 
     const [modal, setModal] = useState(false);
-    // const { user } = useContext(AuthContext);
 
-    // console.log(post._id);
-    // console.log(user._id);
     const handleModal = () => {
         setModal(!modal);
     }
+    
     const handleDelete = ()=>{
         axios.delete(`http://localhost:8000/api/delete/post/${post._id}`)
             .then(res => {
