@@ -45,7 +45,7 @@ const Register = () => {
                         <input placeholder='Confirm password' required ref={passwordAgain} type="password" className="loginInput" />
                         <button className="loginButton" type="submit">Sign Up</button>
                         <hr />
-                        <Link to={"/login"} style={{ display: "flex", justifyContent: "center", textDecoration: "none" }}>
+                        <Link to={"/"} style={{ display: "flex", justifyContent: "center", textDecoration: "none" }}>
                             <button className="loginRegisterButton">Log into account</button>
                         </Link>
                     </form>

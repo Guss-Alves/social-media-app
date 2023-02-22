@@ -73,11 +73,11 @@ const ProfileRightBar = ({ user }) => {
                     </div>
                     <div className="rightBarTopIntroItem">
                         <span className='itemOne'>City :</span>
-                        <span className='itemTwo'> {user.city}</span>
+                        <span className='itemTwo'> {user.city? user.city : "-"}</span>
                     </div>
                     <div className="rightBarTopIntroItem">
                         <span className='itemOne'>From :</span>
-                        <span className='itemTwo'> {user.from}</span>
+                        <span className='itemTwo'> {user.from? user.from : "-"}</span>
                     </div>
                     <div className="rightBarTopIntroItem">
                         <span className='itemOne'>Relationship :</span>
