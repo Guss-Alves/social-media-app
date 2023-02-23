@@ -30,16 +30,48 @@ module.exports.register = async (req, res) => {
 //LOGIN A USER
 module.exports.login = async (req, res) => {
     try {
-        const user = await User.findOne({ email: req.body.email });
-        !user && res.status(404).json("user not found");
+        const user = await User.findOne({ email: req.body.email })
 
+        if(!user){
+            return res.status(404).json({error:"We do not recognize your email and/or password. Please try again."});
+            // return res.json({error: "User not found, please try again !"});
+        }
         const validPassword = await bcrypt.compare(req.body.password, user.password)
-        !validPassword && res.status(400).json("wrong password")
 
-        res.status(200).json(user)
+        if(!validPassword){
+            return res.status(400).json({error:"We do not recognize your email and/or password. Please try again."});
+        }else[
+            res.status(200).json(user)
+        ]
     } catch (err) {
-        res.status(500).json(err)
+        return res.status(500).json(err)
     }
+    // const user = await User.findOne({ email: req.body.email });
+
+    // if (user === null) {
+    //     // email not found in users collection
+    //     return res.json({error: "User not found, please try again !"});
+    // }
+    // const correctPassword = await bcrypt.compare(req.body.password, user.password);
+
+    // if (!correctPassword) {
+    //     // password wasn't a match!
+    //     return res.json({error: "Password is incorrect"});
+    // }else{
+    //     res.status(200).json(user)
+    // }
+
+    // try {
+    //     const user = await User.findOne({ email: req.body.email })
+    //     !user && res.status(404).json("user not found");
+
+    //     const validPassword = await bcrypt.compare(req.body.password, user.password)
+    //     !validPassword && res.status(400).json("wrong password")
+
+    //     res.status(200).json(user)
+    // } catch (err) {
+    //     res.status(500).json(err)
+    // }
 };
 //GET ALL THE USERS
 module.exports.showAllUsers  = async (req, res)=>{
