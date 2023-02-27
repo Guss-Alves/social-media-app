@@ -11,10 +11,11 @@ import ProfileEdit from '../profileEdit/ProfileEdit';
 const ProfileRightBar = ({ user }) => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const [friends, setFriends] = useState([]);
+    // const [userFollows, setUserFollows] = useState({});
     const id = useParams().id;
     const { user: currentUser, dispatch } = useContext(AuthContext);
     const [followed, setFollowed] = useState(
-        currentUser.followings.includes(user?._id)
+        currentUser.followings.includes(id)
     );
 
     useEffect(() => {

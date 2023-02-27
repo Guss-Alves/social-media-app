@@ -1,4 +1,4 @@
-.rightBar{
+.rightBarHome{
     flex: 3;
 }
 .rightBarWrapper{
@@ -84,4 +84,10 @@
 .friendsUserName{
     font-weight: 500;
     font-size: 17px;
+}
+
+@media screen and (max-width: 480px) {
+    .rightBarHome {
+        display: none;
+    }
 }

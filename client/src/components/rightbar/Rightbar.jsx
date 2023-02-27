@@ -24,7 +24,7 @@ const Rightbar = () => {
     }, [user._id]);
 
     return (
-        <div className='rightBar'>
+        <div className='rightBarHome'>
             <div className="rightBarWrapper">
                 <div className="rightBarTop">
                     <h3>Sponsored</h3>
