@@ -77,4 +77,7 @@
     .rightBarWrapper{
         padding: 0;
     }
+    .followButton{
+        margin: 0;
+    }
 }

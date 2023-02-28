@@ -86,7 +86,7 @@ const ProfileEdit = ({userInfo}) => {
                 modal && (
                     <form onSubmit={submitHandler} className="modal">
                         <div onClick={handleModal} className="overlay"></div>
-                        <div  className="modal-content">
+                        <div  className="modal-content-edit">
                             <h1 style={{color:"#1877f2"}}>Profile Info</h1>
                             <button onClick={handleModal} className='close-modal'><MdOutlineCancel/></button>
                             <div className="form-group">

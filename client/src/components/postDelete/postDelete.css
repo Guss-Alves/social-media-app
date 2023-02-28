@@ -79,3 +79,10 @@ body.active-modal {
     font-size: 18px;
     padding-left: 10px;
 }
+
+@media screen and (max-width: 480px) {
+    .modal-content{
+        min-width: 0;
+        width: 300px;
+    }
+}
