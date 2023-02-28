@@ -61,8 +61,20 @@
     justify-content: space-between;
 }
 
-/* @media screen and (max-width: 480px) {
-    .rightBar {
+@media screen and (max-width: 480px) {
+    .profileRightBarTop{
+        position: absolute;
+        top: 485px;
+        left: 5px;
+        width: 365px;
+    }
+    .profileRightBarBottom {
         display: none;
     }
-} */
+    .rightBar{
+        flex: 0;
+    }
+    .rightBarWrapper{
+        padding: 0;
+    }
+}
