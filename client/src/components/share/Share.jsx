@@ -63,16 +63,16 @@ const Share = ({userInfo}) => {
                 )}
                 <div className="shareBottom">
                     <div className="shareOptions">
-                        <RiLiveLine size="32px" color='red' />
+                        <RiLiveLine className='IconShare' size="32px" color='red' />
                         <span className="shareOptionSpan">Live video</span>
                     </div>
                     <label htmlFor='file' className="shareOptions">
-                        <TbPhoto size="32px" color='green' />
+                        <TbPhoto className='IconShare' size="32px" color='green' />
                         <span className="shareOptionSpan">Photo/video</span>
                         <input style={{ display: 'none' }} type="file" id='file' onChange={(e) => setFile(e.target.files[0])} />
                     </label>
                     <div className="shareOptions">
-                        <BsFillEmojiLaughingFill size="32px" color='#CCCC00' />
+                        <BsFillEmojiLaughingFill className='IconShare' size="32px" color='#CCCC00' />
                         <span className="shareOptionSpan">Felling/activity</span>
                     </div>
                     <div className="shareOptionsPost">

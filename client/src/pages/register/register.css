@@ -1,4 +1,4 @@
-.login{
+.Reg{
     width: 100vw;
     height: 100vh;
     background-color: #f0f2f5;
@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
 }
-.loginWrapper{
+.RegWrapper{
     width: 70%;
     height: 70%;
     /* background-color: aqua; */
@@ -31,7 +31,7 @@
     font-size: 24px;
 }
 
-.loginBox{
+.RegBox{
     height: 400px;
     padding: 20px;
     background-color: white;
@@ -76,3 +76,14 @@
     font-weight: 500;
     cursor: pointer;
 } 
+@media screen and (max-width: 480px) {
+    .RegWrapper{
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .RegBox{
+        margin-bottom: 50px;
+        height: 350px;
+    }
+}

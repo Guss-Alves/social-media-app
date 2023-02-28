@@ -31,14 +31,14 @@ const Register = () => {
     };
 
     return (
-        <div className='login'>
-            <div className="loginWrapper">
+        <div className='Reg'>
+            <div className="RegWrapper">
                 <div className="loginLeft">
                     <h3 className="loginLogo">Gusbook</h3>
                     <span className="loginDesc">Connect with friends, family and other people you know. Share your lifestyle with the world around you.</span>
                 </div>
                 <div className="loginRight">
-                    <form className="loginBox" onSubmit={handleClick}>
+                    <form className="RegBox" onSubmit={handleClick}>
                         <input placeholder='Username' required ref={username} type="text" className="loginInput" />
                         <input placeholder='Email' required ref={email} type="email" className="loginInput" />
                         <input placeholder='Password' required ref={password} type="password" className="loginInput" minLength="6" />

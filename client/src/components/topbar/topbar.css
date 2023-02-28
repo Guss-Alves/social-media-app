@@ -111,9 +111,12 @@
         display: none;
     }
     .topbarRight{
-        justify-content: flex-end;
+        justify-content:center;
     }
     .homePic{
         margin-right: 15px;
+    }
+    .logo{
+        margin-left: 5px;
     }
 }

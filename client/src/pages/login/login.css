@@ -79,3 +79,14 @@
     font-weight: 500;
     cursor: pointer;
 }
+@media screen and (max-width: 480px) {
+    .loginWrapper{
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .loginBox{
+        margin-bottom: 50px;
+        height: 350px;
+    }
+}
