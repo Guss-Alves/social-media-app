@@ -1,22 +1,16 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState} from 'react';
 import './profileRightBar.css'
 import axios from 'axios';
 import { useParams } from "react-router"
 import { Link } from 'react-router-dom';
-import { AuthContext } from "../../context/AuthContext";
 import { MdAdd } from 'react-icons/md'
 import { BiMinus } from 'react-icons/bi'
 import ProfileEdit from '../profileEdit/ProfileEdit';
 
-const ProfileRightBar = ({ user }) => {
+const ProfileRightBar = ({ user, userInfo }) => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const [friends, setFriends] = useState([]);
-    // const [userFollows, setUserFollows] = useState({});
     const id = useParams().id;
-    const { user: currentUser, dispatch } = useContext(AuthContext);
-    const [followed, setFollowed] = useState(
-        currentUser.followings.includes(id)
-    );
 
     useEffect(() => {
         const getFriends = async () => {
@@ -33,41 +27,27 @@ const ProfileRightBar = ({ user }) => {
 
     const handleClick = async () => {
         try {
-            if (followed) {
-                await axios.put(`http://localhost:8000/api/user/unfollow/${user._id}`, {
-                    userId: currentUser._id,
-                });
-                
-                dispatch({ type: "UNFOLLOW", payload: user._id });
-                setFollowed(!followed);
-            } else {
-                await axios.put(`http://localhost:8000/api/user/follow/${user._id}`, {
-                    userId: currentUser._id,
-                });
-                
-                dispatch({ type: "FOLLOW", payload: user._id });
-                setFollowed(!followed);
-            }
+            await axios.put(`http://localhost:8000/api/user/followAndUnfollow/${user._id}`, { userId: userInfo._id });
+            window.location.reload();
         } catch(err) {
             console.log(err);
         }
     };
 
-
     return (
         <div className='rightBar'>
             <div className="rightBarWrapper">
                 <div className="profileRightBarTop">
-                    {user._id !== currentUser._id && (
+                    {user._id !== userInfo._id && (
                         <button className='followButton' onClick={handleClick}>
-                            {followed ? "unfollow" : "Follow"}
-                            {followed ? <BiMinus size={"22px"} /> : <MdAdd size={"22px"} />}
+                            {userInfo.followings.includes(id) ? "unfollow" : "Follow"}
+                            {userInfo.followings.includes(id) ? <BiMinus size={"22px"} /> : <MdAdd size={"22px"} />}
                         </button>
                     )}
                     <div className="introContainer">
                         <h2>Intro</h2>
                         {
-                            currentUser._id === id && (
+                            userInfo._id === id && (
                                 <ProfileEdit userInfo={user}/>
                             )
                         }
