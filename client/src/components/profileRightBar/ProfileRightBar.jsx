@@ -11,6 +11,7 @@ const ProfileRightBar = ({ user, userInfo }) => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const [friends, setFriends] = useState([]);
     const id = useParams().id;
+    // console.log(userInfo);
 
     useEffect(() => {
         const getFriends = async () => {
@@ -37,6 +38,16 @@ const ProfileRightBar = ({ user, userInfo }) => {
     return (
         <div className='rightBar'>
             <div className="rightBarWrapper">
+                <div className="accountInfo">
+                    <div className="accountDetails">
+                        <h3>Followers</h3>
+                        <span>{user.followers? user.followers.length: '0'}</span>
+                    </div>
+                    <div className="accountDetails">
+                        <h3>Following</h3>
+                        <span className='accountSpan'>{user.followings? user.followings.length: '0'}</span>
+                    </div>
+                </div>
                 <div className="profileRightBarTop">
                     {user._id !== userInfo._id && (
                         <button className='followButton' onClick={handleClick}>

@@ -60,11 +60,24 @@
     align-items: center;
     justify-content: space-between;
 }
+.accountInfo{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+.accountDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.accountSpan{
+    font-weight: 500;
+}
 
 @media screen and (max-width: 480px) {
     .profileRightBarTop{
         position: absolute;
-        top: 485px;
+        top: 540px;
         left: 5px;
         width: 365px;
     }
@@ -79,5 +92,11 @@
     }
     .followButton{
         margin: 0;
+    }
+    .accountInfo{
+        position: absolute;
+        top: 485px;
+        left: 5px;
+        width: 365px;
     }
 }
