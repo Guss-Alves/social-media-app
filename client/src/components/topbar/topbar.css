@@ -100,6 +100,26 @@
     color: white;
     font-size: 22px;
 }
+.mobile-nav{
+    display: none;
+}
+.topBarIcon{
+    margin: 0px 10px 0 10px;
+    cursor: pointer;
+    color: rgb(232, 228, 228) !important;
+}
+.showLeftBar{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 80%;
+    min-height: 100vh;
+    padding: 5px 1px 1px 1px;
+    background-color: white;
+}
+.noShowLeftBar{
+    display: none;
+}
 @media screen and (max-width: 480px) {
     .topbarCenter {
         display: none;
@@ -118,5 +138,8 @@
     }
     .logo{
         margin-left: 5px;
+    }
+    .mobile-nav{
+        display: flex;
     }
 }

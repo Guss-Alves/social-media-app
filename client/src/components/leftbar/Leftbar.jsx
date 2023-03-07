@@ -13,7 +13,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
 
-const Leftbar = () => {
+const Leftbar = ({sideBarVisile, setSideBarVisile}) => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const [suggest, setSuggest] = useState([]);
     const { user } = useContext(AuthContext);
@@ -77,7 +77,7 @@ const Leftbar = () => {
                 {
                     suggest.map((item) => {
                         return (
-                            <Link key={item._id} to={`/profile/${item._id}`} style={{textDecoration: "none"}}>
+                            <Link key={item._id} to={`/profile/${item._id}`} style={{textDecoration: "none"}} onClick={()=>setSideBarVisile(!sideBarVisile)}>
                                 {
                                 user._id!==item._id?
                                     <div className="leftBarFriendsItem">
