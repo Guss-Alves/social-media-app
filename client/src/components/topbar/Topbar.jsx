@@ -15,23 +15,23 @@ const Topbar = ({userInfo}) => {
     const { user } = useContext(AuthContext);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const navigate = useNavigate();
-    const [sideBarVisile, setSideBarVisile] = useState(false);
+    const [sideBarVisible, setSideBarVisible] = useState(false);
 
     const handleLogOut = ()=>{
         localStorage.clear();
         navigate('/');
         window.location.reload();
     }
-    console.log(sideBarVisile)
+    console.log(sideBarVisible)
     return (
         <div className='topbarContainer'>
             <div className="mobile-nav">
-                <span onClick={()=> setSideBarVisile(!sideBarVisile)}>
+                <span onClick={()=> setSideBarVisible(!sideBarVisible)}>
                     <FaBars className='topBarIcon'/>
                 </span>
             </div>
-            <div className={sideBarVisile? "showLeftBar" : 'noShowLeftBar'}>
-                <Leftbar sideBarVisile={sideBarVisile} setSideBarVisile={setSideBarVisile}/>
+            <div className={sideBarVisible? "showLeftBar" : 'noShowLeftBar'}>
+                <Leftbar sideBarVisible={sideBarVisible} setSideBarVisible={setSideBarVisible}/>
             </div>
             <div className="topbarLeft">
                 <Link to='/' style={{textDecoration: "none"}}><span className='logo'>Gusbook</span></Link>
