@@ -22,7 +22,7 @@ const Topbar = ({userInfo}) => {
         navigate('/');
         window.location.reload();
     }
-    console.log(sideBarVisible)
+    // console.log(sideBarVisible)
     return (
         <div className='topbarContainer'>
             <div className="mobile-nav">
