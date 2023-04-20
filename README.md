@@ -1,7 +1,5 @@
 <div id="top"></div>
 
-<<<<<<< HEAD
-
 
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -17,10 +15,9 @@
 
 <div align="center">
 
-<h2 align="center">Gusbook App</h2>
-<a href="https://github.com/Guss-Alves/social-media-app">
-    <img src="https://user-images.githubusercontent.com/104655523/233236332-a89846f6-0a03-4101-8dbf-3c188f41fb51.png" alt="Logo" width="370" height="220">
-  </a>
+<h1 align="center">Gusbook App</h1>
+    <img src="https://user-images.githubusercontent.com/104655523/233236332-a89846f6-0a03-4101-8dbf-3c188f41fb51.png" alt="Logo" width="800" height="">
+
 
 </div>
 
