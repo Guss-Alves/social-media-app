@@ -1,5 +1,6 @@
 <div id="top"></div>
 
+<<<<<<< HEAD
 
 
 
@@ -46,3 +47,5 @@
 
 
 <!--  *********************************** -->
+<!-- [here is gonna be the link for the video demo of the app](https://www.youtube.com/watch?v=k6C85NPXAtQ)
+>>>>>>> 900989e203908eab60aefd2c9d4542f058a9a2da -->
