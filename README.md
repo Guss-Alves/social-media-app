@@ -17,8 +17,8 @@
 <div align="center">
 <h1 align="center">Gusbook App</h1>
     <img src="https://user-images.githubusercontent.com/104655523/233236332-a89846f6-0a03-4101-8dbf-3c188f41fb51.png" alt="Logo" width="800" height="">
- <!-- [here is gonna be the link for the video demo of the app](https://www.youtube.com/watch?v=k6C85NPXAtQ) -->
 
+<h2><a href="https://youtu.be/E_oHl69d_7U">View Project Demo </a></h2>
 </div>
 <br/>
 
